@@ -1,9 +1,9 @@
 exports.postData = async (req, res) => {
-  const { token, data } = req.body;
+  const { token, data, pageId } = req.body;
   console.log(token, data);
   try {
     const postPage = await fetch(
-      "https://api.notion.com/v1/blocks/e049fa81a9214667b2dd35937f6b65df/children",
+      `https://api.notion.com/v1/blocks/${pageId}/children`,
       {
         method: "PATCH",
         headers: {
