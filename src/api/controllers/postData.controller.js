@@ -1,4 +1,4 @@
-exports.postData = async (req, res) => {
+const postData = async (req, res) => {
   const { token, data, pageId } = req.body;
   console.log(token, data);
   try {
@@ -52,3 +52,5 @@ exports.postData = async (req, res) => {
     res.json({ message: error });
   }
 };
+
+export default postData;

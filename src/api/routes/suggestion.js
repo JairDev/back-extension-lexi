@@ -1,8 +1,8 @@
-const express = require("express");
-const controller = require("../controllers/suggestion.controller");
+import express from "express";
+import controller from "../controllers/suggestion.controller.js";
 
 const router = express.Router();
 
-router.route("/suggestion").post(controller.suggestion);
+router.route("/suggestion").post(controller);
 
-module.exports = router;
+export default router;

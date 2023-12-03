@@ -1,8 +1,7 @@
-const express = require("express");
-const controller = require("../controllers/postData.controller");
-
+import express from "express";
+import controller from "../controllers/postData.controller.js";
 const router = express.Router();
 
-router.route("/post").post(controller.postData);
+router.route("/post").post(controller);
 
-module.exports = router;
+export default router;
