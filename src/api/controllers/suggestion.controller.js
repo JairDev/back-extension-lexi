@@ -1,3 +1,5 @@
+import dotenv from "dotenv";
+dotenv.config();
 import { BingChat } from "bing-chat";
 
 const suggestion = async (req, res) => {
@@ -13,7 +15,7 @@ const suggestion = async (req, res) => {
       headers: {
         accept: "application/json",
         "content-type": "application/json",
-        authorization: "Bearer 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",
+        authorization: `Bearer ${process.env.HF_TOKEN} `,
       },
       body: JSON.stringify({
         inputs: `Create an example of a sentence that can be formed with this word: ${data},

@@ -3,6 +3,7 @@ dotenv.config();
 const clientId = process.env.OAUTH_CLIENT_ID;
 const clientSecret = process.env.OAUTH_CLIENT_SECRET;
 const encoded = Buffer.from(`${clientId}:${clientSecret}`).toString("base64");
+
 const login = async (req, res) => {
   const authCode = req?.body?.code;
   console.log(clientId, clientSecret);
