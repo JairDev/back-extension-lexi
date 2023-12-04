@@ -20,9 +20,9 @@ const suggestion = async (req, res) => {
       body: JSON.stringify({
         inputs: `Create an example of a sentence that can be formed with this word: ${data},
           explain the context of the word, the sentence must be grammatically correct.`,
-        options: {
-          wait_for_model: true,
-        },
+        // options: {
+        //   wait_for_model: true,
+        // },
       }),
     });
     console.log(response.ok);

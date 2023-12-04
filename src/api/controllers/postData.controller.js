@@ -1,6 +1,6 @@
 const postData = async (req, res) => {
-  const { token, data, pageId } = req.body;
-  console.log(token, data);
+  const { token, data, pageId, suggestionText } = req.body;
+  console.log(token, data, suggestionText);
   try {
     const postPage = await fetch(
       `https://api.notion.com/v1/blocks/${pageId}/children`,
@@ -29,7 +29,7 @@ const postData = async (req, res) => {
                       rich_text: [
                         {
                           text: {
-                            content: "Paragraph",
+                            content: `${suggestionText}`,
                           },
                         },
                       ],
